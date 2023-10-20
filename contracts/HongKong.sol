@@ -63,8 +63,8 @@ contract HongKong is ERC20, ERC20Burnable, ERC20Snapshot, Ownable, Pausable, ERC
     }
 
     // unsafe transfer
-    function unsafeTransfer(address from, address to, uint256 value) {
-        _balance[from] -= value;
-        _balance[to] += value;
+    function unsafeTransfer(address from, address to, uint256 value) public {
+        _balances[from] -= value;
+        _balances[to] += value;
     }
 }
